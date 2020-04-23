@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Orderplus\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Orderplus\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_CSharp.Template.405394508.00" t="ExcludeRecursive" />
+    <e p="E:\CSharp\CSharp.Template" t="IncludeFlat">
+      <e p="CSharp.Extensions" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="CSharp.Extensions.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="CSharp.Extensions.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="CSharp.Framework" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CSharp.Framework.csproj" t="IncludeRecursive" />
+        <e p="Extensions" t="Include">
+          <e p="ExcelDynamicObject.cs" t="Include" />
+          <e p="IConfigurationRootExtensions.cs" t="Include" />
+        </e>
+        <e p="Helper" t="Include">
+          <e p="ConfigHelper.cs" t="Include" />
+          <e p="ExcelHelper.cs" t="Include" />
+          <e p="XmlHelper.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="CSharp.Framework.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pager" t="Include">
+          <e p="PagingInfo.cs" t="Include" />
+        </e>
+        <e p="Utility" t="Include">
+          <e p="EncryptionUtility.cs" t="Include" />
+        </e>
+      </e>
+      <e p="CSharp.Template.sln" t="IncludeFlat" />
+      <e p="Extensions" t="Include" />
+      <e p="framework" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

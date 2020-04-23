@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "framework", "framework", "{783E4521-3F34-4AA5-910C-B4B4A34E303F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Framework", "CSharp.Framework\CSharp.Framework.csproj", "{63C9270E-007F-456D-81FE-B341DC0B2830}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extensions", "extensions", "{91D40A77-B9B9-4057-9622-11A570A87ADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Extensions", "CSharp.Extensions\CSharp.Extensions.csproj", "{0A499B5B-BA42-469F-83CC-E412AF6AA8E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63C9270E-007F-456D-81FE-B341DC0B2830} = {783E4521-3F34-4AA5-910C-B4B4A34E303F}
+		{0A499B5B-BA42-469F-83CC-E412AF6AA8E7} = {91D40A77-B9B9-4057-9622-11A570A87ADB}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63C9270E-007F-456D-81FE-B341DC0B2830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C9270E-007F-456D-81FE-B341DC0B2830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C9270E-007F-456D-81FE-B341DC0B2830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C9270E-007F-456D-81FE-B341DC0B2830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A499B5B-BA42-469F-83CC-E412AF6AA8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A499B5B-BA42-469F-83CC-E412AF6AA8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A499B5B-BA42-469F-83CC-E412AF6AA8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A499B5B-BA42-469F-83CC-E412AF6AA8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
