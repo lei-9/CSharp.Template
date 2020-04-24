@@ -40,6 +40,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Template.Scheduler",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Template.WindowsService", "CSharp.Template.WindowsService\CSharp.Template.WindowsService.csproj", "{ACE8533D-FABA-4E0C-81A0-EC0C754A55E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Template.ConsoleApplication", "CSharp.Template.ConsoleApplication\CSharp.Template.ConsoleApplication.csproj", "{6BCFE338-0925-494D-B789-1EB9D9C76C48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Framework.UnitTest", "00 test\CSharp.Framework.UnitTest\CSharp.Framework.UnitTest.csproj", "{F15A164E-577E-4767-8F9B-044FC4BBABD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,7 @@ Global
 		{A5AC7650-F546-4966-9128-53968B3C03F5} = {17FBC963-307D-4402-92AA-7AA83CD6D918}
 		{9936F632-4693-43BC-A131-227273B200FA} = {09FB559D-AFC8-4857-B182-AEE821839427}
 		{786DC5DD-30FD-44CF-B187-D734BEBA39C6} = {09FB559D-AFC8-4857-B182-AEE821839427}
+		{F15A164E-577E-4767-8F9B-044FC4BBABD0} = {D065386E-B834-4BCB-B54B-FBB4D369D081}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{63C9270E-007F-456D-81FE-B341DC0B2830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -114,5 +119,13 @@ Global
 		{ACE8533D-FABA-4E0C-81A0-EC0C754A55E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACE8533D-FABA-4E0C-81A0-EC0C754A55E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACE8533D-FABA-4E0C-81A0-EC0C754A55E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BCFE338-0925-494D-B789-1EB9D9C76C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BCFE338-0925-494D-B789-1EB9D9C76C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BCFE338-0925-494D-B789-1EB9D9C76C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BCFE338-0925-494D-B789-1EB9D9C76C48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15A164E-577E-4767-8F9B-044FC4BBABD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15A164E-577E-4767-8F9B-044FC4BBABD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15A164E-577E-4767-8F9B-044FC4BBABD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15A164E-577E-4767-8F9B-044FC4BBABD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
