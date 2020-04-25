@@ -262,12 +262,21 @@
         </e>
       </e>
       <e p="CSharp.Template.Repositories" t="IncludeRecursive">
+        <e p="BaseRepository.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="CSharp.Template.Repositories.csproj" t="IncludeRecursive" />
         <e p="Data" t="Include">
-          <e p="TemplateContext.cs" t="Include" />
+          <e p="Context" t="Include">
+            <e p="TemplateContext.cs" t="Include" />
+          </e>
+          <e p="Interfaces" t="Include">
+            <e p="IDbContext.cs" t="Include" />
+            <e p="IUnitOfWork.cs" t="Include" />
+            <e p="IUnitOfWorkContext.cs" t="Include" />
+          </e>
+          <e p="UnitOfWork.cs" t="Include" />
+          <e p="UnitOfWorkContext.cs" t="Include" />
         </e>
-        <e p="EfRepository.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">

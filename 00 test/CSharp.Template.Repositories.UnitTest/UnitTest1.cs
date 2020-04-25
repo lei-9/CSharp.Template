@@ -1,6 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Threading;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Primitives;
 using Org.BouncyCastle.Bcpg;
 using Xunit;
 
@@ -11,6 +15,15 @@ namespace CSharp.Template.Repositories.UnitTest
         [Fact]
         public void Test1()
         {
+            var list = new List<string>
+            {
+                "hellow",
+                "world",
+                "leo"
+            };
+            
+            //list.OrderBy()
+            
             // var sqlConnection = "Server=localhost;Initial Catalog=TemplateDB;User ID=sa;Password=123456;Application Name=zbq;MultipleActiveResultSets=false";
             // var connection = new SqlConnection(sqlConnection);
             // connection.Open();
@@ -18,24 +31,22 @@ namespace CSharp.Template.Repositories.UnitTest
             var englishWord = "abcdefghijkmn";
 
             var context = new TempContext();
+
             var user = new User
             {
                 Id = Guid.NewGuid().ToString(),
                 Name = "angle "
             };
 
-            //context.Set<User>().AttachRange();
+            //var db = context.Set<User>();
+            context.Database.BeginTransaction();
 
-            var tran = context.Database.BeginTransaction();
-
-            context.Set<User>().Attach(user);
-
-            context.Entry(user).State = EntityState.Added;
+            if (context.Entry(user).State == EntityState.Detached)
+                context.Entry(user).State = EntityState.Added;
 
             context.SaveChanges();
-
-            tran.Commit();
-            //context.Database.CommitTransaction();
+            
+            
         }
     }
 
