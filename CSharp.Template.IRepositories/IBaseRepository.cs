@@ -46,14 +46,14 @@ namespace CSharp.Template.IRepositories
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        Task<int> Deletes(IEnumerable<TEntity> entities);
+        Task Deletes(IEnumerable<TEntity> entities);
 
         /// <summary>
         /// 删除符合条件的实体集合
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        Task<int> Deletes(Expression<Func<TEntity, bool>> predicate);
+        Task Deletes(Expression<Func<TEntity, bool>> predicate);
 
         #endregion
 
@@ -73,7 +73,7 @@ namespace CSharp.Template.IRepositories
         /// <param name="entities"></param>
         /// <param name="fields">要更新的字段，null= 全量更新</param>
         /// <returns></returns>
-        Task<int> Update(IEnumerable<TEntity> entities, List<string> fields = null);
+        Task Update(IEnumerable<TEntity> entities, List<string> fields = null);
 
         /// <summary>
         /// 更新查询出来的实体对象集合 
@@ -81,7 +81,7 @@ namespace CSharp.Template.IRepositories
         /// <param name="whereExpression"></param>
         /// <param name="updateExpression"></param>
         /// <returns></returns>
-        Task<int> Update(Expression<Func<TEntity, bool>> whereExpression, Expression<Func<TEntity, object>> updateExpression);
+        Task Update(Expression<Func<TEntity, bool>> whereExpression, Expression<Func<TEntity, object>> updateExpression);
 
         #endregion
 
@@ -92,7 +92,7 @@ namespace CSharp.Template.IRepositories
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        TEntity GetByKey(object key);
+        Task<TEntity> GetByKey(object key);
 
 
         /// <summary>
@@ -100,8 +100,18 @@ namespace CSharp.Template.IRepositories
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        TEntity FirstOrDefault(Expression<Func<TEntity, bool>> predicate);
+        Task<TEntity> FirstOrDefault(Expression<Func<TEntity, bool>> predicate);
 
+        /// <summary>
+        /// 查询集合对象
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="orderByDescending"></param>
+        /// <returns></returns>
+        Task<List<TEntity>> GetList(Expression<Func<TEntity, bool>> predicate,  Expression<Func<TEntity, object>> orderBy = null,
+            Expression<Func<TEntity, object>> orderByDescending = null);
+        
         /// <summary>
         /// 查询集合对象 
         /// </summary>
@@ -111,16 +121,22 @@ namespace CSharp.Template.IRepositories
         /// <param name="orderBy"></param>
         /// <param name="orderByDescending"></param>
         /// <returns></returns>
-        IQueryable<TEntity> GetList(Expression<Func<TEntity, bool>> predicate, int? skip = null, int? take = null, Expression<Func<TEntity, object>> orderBy = null,
+        Task<List<TEntity>> GetList(Expression<Func<TEntity, bool>> predicate, int? skip = null, int? take = null, Expression<Func<TEntity, object>> orderBy = null,
             Expression<Func<TEntity, object>> orderByDescending = null);
 
         /// <summary>
         /// 查询所有
         /// </summary>
         /// <returns></returns>
-        IEnumerable<TEntity> GetAll();
+        Task<List<TEntity>> GetAll();
         
 
         #endregion
+
+        /// <summary>
+        /// 提交持久化
+        /// </summary>
+        /// <returns></returns>
+        Task<int> SaveChanges();
     }
 }

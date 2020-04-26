@@ -1,9 +1,7 @@
 ﻿using System;
 using System.IO;
 using CSharp.CodeGenerator.Enums;
-using Microsoft.AspNetCore.Connections;
 using Microsoft.Extensions.Configuration;
-using Microsoft.VisualBasic;
 
 namespace CSharp.CodeGenerator.Core
 {

@@ -1,4 +1,5 @@
-﻿using CSharp.Framework.Helper;
+﻿using System.Reflection;
+using CSharp.Framework.Helper;
 using Microsoft.EntityFrameworkCore;
 
 namespace CSharp.Template.Repositories.Data.Context
@@ -14,6 +15,7 @@ namespace CSharp.Template.Repositories.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }

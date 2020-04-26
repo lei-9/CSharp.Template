@@ -1,9 +1,14 @@
-﻿namespace CSharp.Template.Repositories.Data
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+using CSharp.Template.Repositories.Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+namespace CSharp.Template.Repositories.Data
 {
-    public class UnitOfWorkContext
+    public class UnitOfWorkContext //: IUnitOfWorkContext, IDisposable
     {
-        //DbContextBase 集合保存 
-        // 开始提交回滚事务从该集合中获取
-        // 利用IServiceProvider 注入
+        
     }
 }

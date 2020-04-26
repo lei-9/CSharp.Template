@@ -3,7 +3,7 @@
 namespace CSharp.Template.Repositories.Data.Interfaces
 {
     /// <summary>
-    /// 工作单元 - 事务管理
+    /// 工作单元 - 持久化事务管理
     /// </summary>
     public interface IUnitOfWork
     {
@@ -13,11 +13,6 @@ namespace CSharp.Template.Repositories.Data.Interfaces
         /// false 未提交
         /// </summary>
         bool Committed { get; }
-        /// <summary>
-        /// 开启事务
-        /// </summary>
-        /// <returns></returns>
-        Task BeginTransaction();
         
         /// <summary>
         /// 提交事务

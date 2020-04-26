@@ -1,8 +1,39 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<TableInfoModel>
+@{
+    ViewData["Title"] = "TableList";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@{
+    <table>
+        <tbody>
+        @foreach (var table in Model)
+        {
+            <tr>
+                <td>@table.TableId</td>
+                <td>@table.TableName</td>
+                <td>@table.Prop</td>
+                <td>@table.CreateByDate</td>
+                <td><button onclick="func.create(@table.TableId)">创建</button></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+}
+<script>
+ var func = {
+     create : function(id){
+         debugger
+         var param = [id]
+                            $.ajax({
+                                 url: 'Home/Create',
+                                 data : {tableIds:param},
+                                 type:'post',
+                                 success:function(res) {
+                                   console.log(res)
+                                 }
+                             })
+     }
+ }
+
+</script>

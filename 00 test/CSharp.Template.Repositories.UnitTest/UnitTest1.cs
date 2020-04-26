@@ -45,8 +45,6 @@ namespace CSharp.Template.Repositories.UnitTest
                 context.Entry(user).State = EntityState.Added;
 
             context.SaveChanges();
-            
-            
         }
     }
 
@@ -74,7 +72,6 @@ namespace CSharp.Template.Repositories.UnitTest
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().ToTable("Users");
-
             //base.OnModelCreating(modelBuilder);
         }
     }
