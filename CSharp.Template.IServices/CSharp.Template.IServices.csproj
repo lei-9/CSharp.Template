@@ -4,4 +4,10 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CSharp.Template.DTO\CSharp.Template.DTO.csproj" />
+      <ProjectReference Include="..\CSharp.Template.PersistentObject\CSharp.Template.PersistentObject.csproj" />
+      <ProjectReference Include="..\CSharp.Template.ViewModel\CSharp.Template.ViewModel.csproj" />
+    </ItemGroup>
+
 </Project>

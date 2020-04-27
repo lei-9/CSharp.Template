@@ -88,7 +88,24 @@ namespace CSharp.Template.Repositories
 
         public Task Update(IEnumerable<TEntity> entities, List<string> fields = null)
         {
-            throw new NotImplementedException();
+            return Task.Run(() =>
+            {
+                if (fields?.Any() ?? false)
+                {
+                    foreach (var entity in entities)
+                    {
+                        var model=_context.Entry(entity);
+                        foreach (var field in fields)
+                        {
+                            model.Property(field).IsModified = true;
+                        }
+                    }
+                }
+                else
+                {
+                    _context.UpdateRange(entities);
+                }
+            });
         }
 
         public Task Update(Expression<Func<TEntity, bool>> whereExpression, Expression<Func<TEntity, object>> updateExpression)
@@ -114,13 +131,13 @@ namespace CSharp.Template.Repositories
 
         public Task<TEntity> GetByKey(object key)
         {
+            //return _context.Set<TEntity>().FindAsync(key);
             throw new NotImplementedException();
         }
 
         public Task<TEntity> FirstOrDefault(Expression<Func<TEntity, bool>> predicate)
         {
-            //_context.Set<TEntity>().FirstOrDefaultAsync()
-            throw new NotImplementedException();
+            return _context.Set<TEntity>().FirstOrDefaultAsync(predicate);
         }
 
         public Task<List<TEntity>> GetList(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, object>> orderBy = null, Expression<Func<TEntity, object>> 
