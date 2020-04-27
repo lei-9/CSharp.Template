@@ -4,4 +4,14 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CSharp.Extensions\CSharp.Extensions.csproj" />
+      <ProjectReference Include="..\CSharp.Framework\CSharp.Framework.csproj" />
+      <ProjectReference Include="..\CSharp.Template.DTO\CSharp.Template.DTO.csproj" />
+      <ProjectReference Include="..\CSharp.Template.IRepositories\CSharp.Template.IRepositories.csproj" />
+      <ProjectReference Include="..\CSharp.Template.IServices\CSharp.Template.IServices.csproj" />
+      <ProjectReference Include="..\CSharp.Template.PersistentObject\CSharp.Template.PersistentObject.csproj" />
+      <ProjectReference Include="..\CSharp.Template.ViewModel\CSharp.Template.ViewModel.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -16,8 +16,8 @@
     <e p="C:\Users\Orderplus\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
     <e p="C:\Users\Orderplus\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
     <e p="C:\Users\Orderplus\.nuget\packages\xunit.runner.visualstudio\2.4.0\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
-    <e p="C:\Users\Orderplus\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Orderplus\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_CSharp.Template.405394508.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Orderplus\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Orderplus\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_CSharp.Template.405394508.00" t="ExcludeRecursive" />
     <e p="E:\CSharp\CSharp.Template" t="IncludeFlat">
       <e p="00 test" t="Include">
         <e p="CSharp.Framework.UnitTest" t="IncludeRecursive">
@@ -242,9 +242,12 @@
         </e>
       </e>
       <e p="CSharp.Template.IServices" t="IncludeRecursive">
+        <e p="Account" t="Include">
+          <e p="IUserService.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
         <e p="CSharp.Template.IServices.csproj" t="IncludeRecursive" />
+        <e p="IBaseService.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -254,6 +257,9 @@
         </e>
       </e>
       <e p="CSharp.Template.PersistentObject" t="IncludeRecursive">
+        <e p="Account" t="Include">
+          <e p="User.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Class1.cs" t="Include" />
         <e p="CSharp.Template.PersistentObject.csproj" t="IncludeRecursive" />
@@ -276,13 +282,6 @@
           <e p="Context" t="Include">
             <e p="TemplateContext.cs" t="Include" />
           </e>
-          <e p="Interfaces" t="Include">
-            <e p="IDbContext.cs" t="Include" />
-            <e p="IUnitOfWork.cs" t="Include" />
-            <e p="IUnitOfWorkContext.cs" t="Include" />
-          </e>
-          <e p="UnitOfWork.cs" t="Include" />
-          <e p="UnitOfWorkContext.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -305,8 +304,11 @@
         <e p="Program.cs" t="Include" />
       </e>
       <e p="CSharp.Template.Services" t="IncludeRecursive">
+        <e p="Account" t="Include">
+          <e p="UserService.cs" t="Include" />
+        </e>
+        <e p="BaseService.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
         <e p="CSharp.Template.Services.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -432,7 +434,16 @@
       <e p="CSharp.Template.WebApi" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
+        <e p="Areas" t="Include">
+          <e p="Account" t="Include">
+            <e p="UserController.cs" t="Include" />
+          </e>
+        </e>
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Config" t="Include">
+          <e p="AutofacComponent.cs" t="Include" />
+          <e p="AutofacConfig.cs" t="Include" />
+        </e>
         <e p="Controllers" t="Include">
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
