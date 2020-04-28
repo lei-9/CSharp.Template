@@ -20,6 +20,7 @@ namespace CSharp.Template.WebApi
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            //log4net.Config.XmlConfigurator.Configure();
         }
 
         public IConfiguration Configuration { get; }
