@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CSharp.Template.Repositories
 {
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, new()
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
         /// <summary>
         /// 上下文对象

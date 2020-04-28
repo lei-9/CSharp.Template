@@ -1,12 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Autofac;
 using CSharp.Template.IRepositories;
 using CSharp.Template.IServices;
+using CSharp.Template.IServices.Account;
 using CSharp.Template.Repositories;
 using CSharp.Template.Repositories.Data.Context;
 using CSharp.Template.Services;
+using CSharp.Template.Services.Account;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,18 +36,23 @@ namespace CSharp.Template.WebApi
             //注入上下文配置
             services.AddDbContextPool<TemplateContext>(option => { option.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")); });
 
-            services.AddControllers().AddControllersAsServices();
+            services.AddControllers();
+            //.AddControllersAsServices();
 
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "my api", Version = "v1"}); });
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>));
-            builder.RegisterGeneric(typeof(BaseService<>)).As(typeof(IBaseService<>));
+            //builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>));
+            //builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>));
 
-            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly());
-            //builder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
+            // var service = Assembly.Load("CSharp.Template.Services");
+            // var repository = Assembly.Load("CSharp.Template.Repositories");
+            // builder.RegisterAssemblyTypes(service, repository).AsImplementedInterfaces();
+
+            builder.RegisterType(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>));
+            builder.RegisterType(typeof(BaseService<>)).As(typeof(IBaseService<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace CSharp.Template.IServices
 {
-    public interface IBaseService<TEntity> where TEntity : class, new()
+    public interface IBaseService<TEntity> where TEntity : class
     {
-        
-         #region 新增
+        #region 新增
 
         /// <summary>
         /// 新增
@@ -103,9 +102,9 @@ namespace CSharp.Template.IServices
         /// <param name="orderBy"></param>
         /// <param name="orderByDescending"></param>
         /// <returns></returns>
-        Task<List<TEntity>> GetList(Expression<Func<TEntity, bool>> predicate,  Expression<Func<TEntity, object>> orderBy = null,
+        Task<List<TEntity>> GetList(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, object>> orderBy = null,
             Expression<Func<TEntity, object>> orderByDescending = null);
-        
+
         /// <summary>
         /// 查询集合对象 
         /// </summary>
@@ -123,7 +122,6 @@ namespace CSharp.Template.IServices
         /// </summary>
         /// <returns></returns>
         Task<List<TEntity>> GetAll();
-        
 
         #endregion
 

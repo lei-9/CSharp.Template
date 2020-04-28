@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CSharp.Template.IRepositories
 {
-    public interface IBaseRepository<TEntity> where TEntity : class, new()
+    public interface IBaseRepository<TEntity> where TEntity : class
     {
         /// <summary>
         /// 延迟查询对象
