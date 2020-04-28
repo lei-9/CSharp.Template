@@ -14,6 +14,7 @@
     <ItemGroup>
       <ProjectReference Include="..\CSharp.Framework\CSharp.Framework.csproj" />
       <ProjectReference Include="..\CSharp.Template.IRepositories\CSharp.Template.IRepositories.csproj" />
+      <ProjectReference Include="..\CSharp.Template.PersistentObject\CSharp.Template.PersistentObject.csproj" />
     </ItemGroup>
 
 </Project>

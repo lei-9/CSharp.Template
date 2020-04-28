@@ -7,11 +7,15 @@
     <ItemGroup>
       <PackageReference Include="Autofac" Version="5.1.3" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+      <PackageReference Include="Autofac.Extras.DynamicProxy" Version="5.0.0" />
+      <PackageReference Include="log4net" Version="2.0.8" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0-preview.3.20215.2" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.3" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\CSharp.StackExchangeRedis\CSharp.StackExchangeRedis.csproj" />
       <ProjectReference Include="..\CSharp.Template.DTO\CSharp.Template.DTO.csproj" />
       <ProjectReference Include="..\CSharp.Template.IRepositories\CSharp.Template.IRepositories.csproj" />
       <ProjectReference Include="..\CSharp.Template.IServices\CSharp.Template.IServices.csproj" />
@@ -19,6 +23,10 @@
       <ProjectReference Include="..\CSharp.Template.Repositories\CSharp.Template.Repositories.csproj" />
       <ProjectReference Include="..\CSharp.Template.Services\CSharp.Template.Services.csproj" />
       <ProjectReference Include="..\CSharp.Template.ViewModel\CSharp.Template.ViewModel.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Config" />
     </ItemGroup>
 
 

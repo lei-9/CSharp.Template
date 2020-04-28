@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using CSharp.Framework.Helper;
+using CSharp.Template.PersistentObject.Account;
 using Microsoft.EntityFrameworkCore;
 
 namespace CSharp.Template.Repositories.Data.Context
@@ -11,11 +12,7 @@ namespace CSharp.Template.Repositories.Data.Context
 
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-        }
-
+        private DbSet<User> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

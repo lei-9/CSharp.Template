@@ -6,6 +6,5 @@ namespace CSharp.Template.IServices.Account
 {
     public interface IUserService : IBaseService<User>
     {
-        Task<List<User>> GetAll();
     }
 }

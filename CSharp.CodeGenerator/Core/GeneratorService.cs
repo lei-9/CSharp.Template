@@ -52,7 +52,6 @@ namespace CSharp.CodeGenerator.Core
                 TableIds = tableIds
             }).ToList();
             
-            
         }
     }
 }

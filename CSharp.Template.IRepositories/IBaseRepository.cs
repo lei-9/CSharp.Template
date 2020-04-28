@@ -20,15 +20,17 @@ namespace CSharp.Template.IRepositories
         /// 新增
         /// </summary>
         /// <param name="entity"></param>
+        /// <param name="isSave"></param>
         /// <returns></returns>
-        Task Add(TEntity entity);
+        Task Insert(TEntity entity,bool isSave= true);
 
         /// <summary>
         /// 新增集合
         /// </summary>
         /// <param name="entities"></param>
+        /// <param name="isSave"></param>
         /// <returns></returns>
-        Task Add(IEnumerable<TEntity> entities);
+        Task Insert(IEnumerable<TEntity> entities,bool isSave= true);
 
         #endregion
 
@@ -38,22 +40,25 @@ namespace CSharp.Template.IRepositories
         /// 删除单个实体
         /// </summary>
         /// <param name="entity"></param>
+        /// <param name="isSave"></param>
         /// <returns></returns>
-        Task Delete(TEntity entity);
+        Task Delete(TEntity entity,bool isSave= true);
 
         /// <summary>
         /// 删除实体集合
         /// </summary>
         /// <param name="entities"></param>
+        /// <param name="isSave"></param>
         /// <returns></returns>
-        Task Deletes(IEnumerable<TEntity> entities);
+        Task Deletes(IEnumerable<TEntity> entities,bool isSave= true);
 
         /// <summary>
         /// 删除符合条件的实体集合
         /// </summary>
         /// <param name="predicate"></param>
+        /// <param name="isSave"></param>
         /// <returns></returns>
-        Task Deletes(Expression<Func<TEntity, bool>> predicate);
+        Task Deletes(Expression<Func<TEntity, bool>> predicate,bool isSave= true);
 
         #endregion
 
@@ -64,24 +69,27 @@ namespace CSharp.Template.IRepositories
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="fields">要更新的字段，null= 全量更新</param>
+        /// <param name="isSave"></param>
         /// <returns></returns>
-        Task Update(TEntity entity, List<string> fields = null);
+        Task Update(TEntity entity, List<string> fields = null,bool isSave= true);
 
         /// <summary>
         /// 更新实体对象集合
         /// </summary>
         /// <param name="entities"></param>
         /// <param name="fields">要更新的字段，null= 全量更新</param>
+        /// <param name="isSave"></param>
         /// <returns></returns>
-        Task Update(IEnumerable<TEntity> entities, List<string> fields = null);
+        Task Update(IEnumerable<TEntity> entities, List<string> fields = null,bool isSave= true);
 
         /// <summary>
         /// 更新查询出来的实体对象集合 
         /// </summary>
         /// <param name="whereExpression"></param>
         /// <param name="updateExpression"></param>
+        /// <param name="isSave"></param>
         /// <returns></returns>
-        Task Update(Expression<Func<TEntity, bool>> whereExpression, Expression<Func<TEntity, object>> updateExpression);
+        Task Update(Expression<Func<TEntity, bool>> whereExpression, Expression<Func<TEntity, object>> updateExpression,bool isSave= true);
 
         #endregion
 
