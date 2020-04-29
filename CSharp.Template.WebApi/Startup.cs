@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using Autofac;
 using CSharp.StackExchangeRedis;
@@ -11,19 +12,21 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using NLog.Extensions.Logging;
 
 namespace CSharp.Template.WebApi
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            //log4net.Config.XmlConfigurator.Configure();
         }
 
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -33,7 +36,7 @@ namespace CSharp.Template.WebApi
 
             services.AddControllers();
             //.AddControllersAsServices();
-            
+
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "my api", Version = "v1"}); });
         }
 
@@ -43,7 +46,7 @@ namespace CSharp.Template.WebApi
         {
             //注入redis
             builder.RegisterType(typeof(RedisCached)).As(typeof(IRedisCached));
-            
+
             //数据库上下文注入
             builder.Register(c =>
             {
@@ -53,13 +56,15 @@ namespace CSharp.Template.WebApi
                 //获取配置的连接串
                 opt.UseSqlServer(config.GetSection("DefaultConnectionString").Value);
 
+
+                //opt.UseLoggerFactory(_loggerFactory);
+
                 return new TemplateContext(opt.Options);
             }).AsSelf().InstancePerLifetimeScope();
-            
+
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IBaseRepository<>));
             builder.RegisterAssemblyTypes(Assembly.Load("CSharp.Template.Services")).Where(a => a.Name.EndsWith("Service")).AsImplementedInterfaces();
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly());
-
         }
 
         #endregion
