@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog;
 using NLog.Web;
+using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace CSharp.Template.WebApi
 {
@@ -17,7 +19,9 @@ namespace CSharp.Template.WebApi
         {
             try
             {
-                NLogBuilder.ConfigureNLog("nlog.config");
+                var logFactory = NLogBuilder.ConfigureNLog("nlog.config");
+                var log=logFactory.GetLogger("test");
+                log.Info("hellow word");
                 CreateHostBuilder(args).Build().Run();
             }
             finally

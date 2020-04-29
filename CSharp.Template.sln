@@ -36,8 +36,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Template.WebApi", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Template.Web", "CSharp.Template.Web\CSharp.Template.Web.csproj", "{E6722086-2BB9-4B66-9CCE-1B0CD2F22B93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Template.Scheduler", "CSharp.Template.Scheduler\CSharp.Template.Scheduler.csproj", "{B9D2EE69-5F29-416D-B4D3-551E2F87230D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Template.WindowsService", "CSharp.Template.WindowsService\CSharp.Template.WindowsService.csproj", "{ACE8533D-FABA-4E0C-81A0-EC0C754A55E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Template.ConsoleApplication", "CSharp.Template.ConsoleApplication\CSharp.Template.ConsoleApplication.csproj", "{6BCFE338-0925-494D-B789-1EB9D9C76C48}"
@@ -51,6 +49,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.StackExchangeRedis.UnitTest", "00 test\CSharp.StackExchangeRedis.UnitTest\CSharp.StackExchangeRedis.UnitTest.csproj", "{497650E6-FD1E-49CA-9262-253C4E454017}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.StackExchangeRedis", "CSharp.StackExchangeRedis\CSharp.StackExchangeRedis.csproj", "{92391E89-59CF-4693-A63D-691EF004E9B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Scheduler", "CSharp.Scheduler\CSharp.Scheduler.csproj", "{00B5CDE4-8DF1-449B-99C0-ABB6F42F8116}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Log.UnitTest", "00 test\CSharp.Log.UnitTest\CSharp.Log.UnitTest.csproj", "{7D5619D4-3AB7-4E88-9986-DA83CFEA3B23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,8 @@ Global
 		{0845DB90-8BED-4286-86BE-B05AA8679536} = {D065386E-B834-4BCB-B54B-FBB4D369D081}
 		{497650E6-FD1E-49CA-9262-253C4E454017} = {D065386E-B834-4BCB-B54B-FBB4D369D081}
 		{92391E89-59CF-4693-A63D-691EF004E9B8} = {783E4521-3F34-4AA5-910C-B4B4A34E303F}
+		{00B5CDE4-8DF1-449B-99C0-ABB6F42F8116} = {783E4521-3F34-4AA5-910C-B4B4A34E303F}
+		{7D5619D4-3AB7-4E88-9986-DA83CFEA3B23} = {D065386E-B834-4BCB-B54B-FBB4D369D081}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{63C9270E-007F-456D-81FE-B341DC0B2830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -123,10 +127,6 @@ Global
 		{E6722086-2BB9-4B66-9CCE-1B0CD2F22B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6722086-2BB9-4B66-9CCE-1B0CD2F22B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6722086-2BB9-4B66-9CCE-1B0CD2F22B93}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9D2EE69-5F29-416D-B4D3-551E2F87230D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9D2EE69-5F29-416D-B4D3-551E2F87230D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9D2EE69-5F29-416D-B4D3-551E2F87230D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9D2EE69-5F29-416D-B4D3-551E2F87230D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ACE8533D-FABA-4E0C-81A0-EC0C754A55E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ACE8533D-FABA-4E0C-81A0-EC0C754A55E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACE8533D-FABA-4E0C-81A0-EC0C754A55E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -155,5 +155,13 @@ Global
 		{92391E89-59CF-4693-A63D-691EF004E9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92391E89-59CF-4693-A63D-691EF004E9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92391E89-59CF-4693-A63D-691EF004E9B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B5CDE4-8DF1-449B-99C0-ABB6F42F8116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B5CDE4-8DF1-449B-99C0-ABB6F42F8116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B5CDE4-8DF1-449B-99C0-ABB6F42F8116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B5CDE4-8DF1-449B-99C0-ABB6F42F8116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D5619D4-3AB7-4E88-9986-DA83CFEA3B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D5619D4-3AB7-4E88-9986-DA83CFEA3B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D5619D4-3AB7-4E88-9986-DA83CFEA3B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D5619D4-3AB7-4E88-9986-DA83CFEA3B23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

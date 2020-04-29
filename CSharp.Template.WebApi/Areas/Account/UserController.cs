@@ -40,7 +40,6 @@ namespace CSharp.Template.WebApi.Areas.Account
         public async Task<IActionResult> GetAll()
         {
             _logger.LogInformation("test");
-            await _redisCached.StringSetAsync("first:1", "hellow");
             var result = await _userService.Value.GetAll();
             return SuccessResult(result);
         }
