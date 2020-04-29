@@ -19,12 +19,10 @@ namespace CSharp.Template.WebApi
         {
             try
             {
-                var logFactory = NLogBuilder.ConfigureNLog("nlog.config");
-                var log=logFactory.GetLogger("test");
-                log.Info("hellow word");
+                NLogBuilder.ConfigureNLog("nlog.config");
                 CreateHostBuilder(args).Build().Run();
             }
-            finally
+            catch
             {
                 NLog.LogManager.Shutdown();
             }

@@ -56,7 +56,10 @@ namespace CSharp.Template.WebApi
                 //获取配置的连接串
                 opt.UseSqlServer(config.GetSection("DefaultConnectionString").Value);
 
-                //opt.UseLoggerFactory(_loggerFactory);
+                //
+                // var loggerFactory = c.Resolve<ILoggerFactory>();
+                // opt.UseLoggerFactory(loggerFactory)
+                //     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 
                 return new TemplateContext(opt.Options);
             }).AsSelf().InstancePerLifetimeScope();
