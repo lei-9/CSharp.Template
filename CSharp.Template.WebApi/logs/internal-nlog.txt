@@ -1,0 +1,32 @@
+2020-04-30 10:06:43.0520 Info Message Template Auto Format enabled
+2020-04-30 10:06:43.0666 Info Loading assembly: NLog.Web.AspNetCore
+2020-04-30 10:06:43.1186 Info Adding target FileTarget(Name=allfile)
+2020-04-30 10:06:43.1219 Info Adding target FileTarget(Name=SqlTarget)
+2020-04-30 10:06:43.1219 Info Adding target FileTarget(Name=ownFile-web)
+2020-04-30 10:06:43.1219 Info Adding target DatabaseTarget(Name=database)
+2020-04-30 10:06:43.1561 Info Found 55 configuration items
+2020-04-30 10:06:43.1914 Info Shutdown() called. Logger closing...
+2020-04-30 10:06:43.1914 Info Closing old configuration.
+2020-04-30 10:06:43.2038 Info Logger has been closed down.
+2020-04-30 10:06:43.2150 Info AppDomain Shutting down. Logger closing...
+2020-04-30 10:06:43.2150 Info Logger has been shut down.
+2020-04-30 10:15:05.0927 Info Message Template Auto Format enabled
+2020-04-30 10:15:05.1053 Info Loading assembly: NLog.Web.AspNetCore
+2020-04-30 10:15:05.1635 Info Adding target FileTarget(Name=allfile)
+2020-04-30 10:15:05.1635 Info Adding target FileTarget(Name=ownFile-web)
+2020-04-30 10:15:05.1952 Info Found 45 configuration items
+2020-04-30 10:17:48.3069 Info Message Template Auto Format enabled
+2020-04-30 10:17:48.3169 Info Loading assembly: NLog.Web.AspNetCore
+2020-04-30 10:17:48.3686 Info Adding target FileTarget(Name=allfile)
+2020-04-30 10:17:48.3756 Info Adding target FileTarget(Name=ownFile-web)
+2020-04-30 10:17:48.3992 Info Found 45 configuration items
+2020-04-30 10:21:00.8800 Info Message Template Auto Format enabled
+2020-04-30 10:21:00.8800 Info Loading assembly: NLog.Web.AspNetCore
+2020-04-30 10:21:00.9415 Info Adding target FileTarget(Name=allfile)
+2020-04-30 10:21:00.9415 Info Adding target FileTarget(Name=ownFile-web)
+2020-04-30 10:21:00.9748 Info Found 45 configuration items
+2020-04-30 10:32:42.3669 Info Message Template Auto Format enabled
+2020-04-30 10:32:42.3798 Info Loading assembly: NLog.Web.AspNetCore
+2020-04-30 10:32:42.4481 Info Adding target AsyncTargetWrapper(Name=allfile)
+2020-04-30 10:32:42.4547 Info Adding target AsyncTargetWrapper(Name=ownFile-web)
+2020-04-30 10:32:42.4769 Info Found 46 configuration items

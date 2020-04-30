@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using System.Security.Claims;
 using Autofac;
 using CSharp.StackExchangeRedis;
 using CSharp.StackExchangeRedis.Core;
@@ -8,6 +9,7 @@ using CSharp.Template.Repositories;
 using CSharp.Template.Repositories.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -57,9 +59,9 @@ namespace CSharp.Template.WebApi
                 opt.UseSqlServer(config.GetSection("DefaultConnectionString").Value);
 
                 //
-                // var loggerFactory = c.Resolve<ILoggerFactory>();
-                // opt.UseLoggerFactory(loggerFactory)
-                //     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                var loggerFactory = c.Resolve<ILoggerFactory>();
+
+                opt.UseLoggerFactory(loggerFactory);
 
                 return new TemplateContext(opt.Options);
             }).AsSelf().InstancePerLifetimeScope();
@@ -78,6 +80,21 @@ namespace CSharp.Template.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //todo
+            #region 错误处理 
+
+            app.UseExceptionHandler(exConfig =>
+            {
+                exConfig.Run(async context =>
+                {
+                    await context.Response.WriteAsync("error");
+                    //context.User = ClaimsPrincipal.Current;
+                });
+            });
+
+            #endregion
+
 
             #region swagger 配置
 

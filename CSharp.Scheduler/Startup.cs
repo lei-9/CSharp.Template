@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using CrystalQuartz.Application;
 using CrystalQuartz.AspNetCore;
 using CSharp.Scheduler.Core;
+using CSharp.Scheduler.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +24,8 @@ namespace CSharp.Scheduler
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+
+
         public void ConfigureServices(IServiceCollection services)
         {
         }
@@ -37,36 +42,46 @@ namespace CSharp.Scheduler
 
             app.UseEndpoints(endpoints => { endpoints.MapGet("/", async context => { await context.Response.WriteAsync("Hello World!"); }); });
 
+            //get jobs by settings
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json").Build();
 
-            Task.Run(async () =>
+            var settings = config.GetSection("QuartzSettings").Get<List<QuartzSetting>>();
+
+            var props = new NameValueCollection
             {
-                var props = new NameValueCollection
+                //settings
+                // [""]  = ""    
+            };
+
+            var schedulerFactory = new StdSchedulerFactory();
+
+            var scheduler = schedulerFactory.GetScheduler().Result;
+
+            if (settings?.Any() ?? false)
+            {
+                var jobServiceAssembly = Assembly.Load("CSharp.Scheduler");
+               
+                foreach (var setting in settings)
                 {
-                    //settings
-                    // [""]  = ""    
-                };
+                    var curJob = jobServiceAssembly.CreateInstance(setting.JobFullPath);
+                    if (curJob == default) throw new DllNotFoundException($"配置的Job - {setting.JobName}不存在！");
+                    var job = JobBuilder.Create(curJob.GetType())
+                        .WithIdentity(setting.JobName ?? setting.JobFullPath.Split(".").Last())
+                        .Build();
 
-                var schedulerFactory = new StdSchedulerFactory(props);
-                
-                var scheduler = await schedulerFactory.GetScheduler();
+                    var trigger = TriggerBuilder.Create()
+                        .WithCronSchedule(setting.Cron)
+                        .Build();
 
-                var job = JobBuilder.Create<FirstJob>()
-                    .WithIdentity("每隔两秒", "第一个").Build();
+                    var dateTime = scheduler.ScheduleJob(job, trigger).Result;
+                }
 
-                var trigger = TriggerBuilder.Create()
-                    .WithSimpleSchedule(x => x.WithIntervalInSeconds(2).RepeatForever())
-                    .WithIdentity("第一个触发", "时间触发组")
-                    .Build();
+                scheduler.Start().GetAwaiter().GetResult();
+            }
 
-                var dateTime = await scheduler.ScheduleJob(job, trigger);
-
-                await scheduler.Start();
-
-                app.UseCrystalQuartz(() => scheduler, new CrystalQuartzOptions
-                {
-                    // Path = "" //设置前端链接，默认为localhost:port/{Path}
-                });
-            });
+            app.UseCrystalQuartz(() => scheduler);
         }
     }
 }

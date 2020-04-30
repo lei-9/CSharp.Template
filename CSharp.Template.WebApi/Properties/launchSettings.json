@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "https://localhost:5005/swagger",
+      "launchUrl": "https://localhost:5002/swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,8 +20,8 @@
     "CSharp.Template.WebApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "https://localhost:5005/swagger",
-      "applicationUrl": "https://localhost:5004;",
+      "launchUrl": "https://localhost:5002/swagger",
+      "applicationUrl": "https://localhost:5002;",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
