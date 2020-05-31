@@ -30,3 +30,8 @@
 2020-04-30 10:32:42.4481 Info Adding target AsyncTargetWrapper(Name=allfile)
 2020-04-30 10:32:42.4547 Info Adding target AsyncTargetWrapper(Name=ownFile-web)
 2020-04-30 10:32:42.4769 Info Found 46 configuration items
+2020-05-30 17:15:04.1476 Info Message Template Auto Format enabled
+2020-05-30 17:15:04.1611 Info Loading assembly: NLog.Web.AspNetCore
+2020-05-30 17:15:04.2321 Info Adding target AsyncTargetWrapper(Name=allfile)
+2020-05-30 17:15:04.2409 Info Adding target AsyncTargetWrapper(Name=ownFile-web)
+2020-05-30 17:15:04.2701 Info Found 46 configuration items

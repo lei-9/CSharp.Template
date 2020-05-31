@@ -56,7 +56,7 @@ namespace CSharp.Template.WebApi
 
                 var opt = new DbContextOptionsBuilder<TemplateContext>();
                 //获取配置的连接串
-                opt.UseSqlServer(config.GetSection("DefaultConnectionString").Value);
+                opt.UseMySQL(config.GetSection("DefaultConnectionString").Value);
 
                 //
                 var loggerFactory = c.Resolve<ILoggerFactory>();

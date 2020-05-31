@@ -8,7 +8,7 @@ namespace CSharp.Template.Repositories.Data.Config
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("users");
+            builder.ToTable("user");
         }
     }
 }
